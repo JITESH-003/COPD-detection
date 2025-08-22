@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Respiratory Disease Classification</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        input, button { padding: 10px; margin: 5px; width: 200px; }
+        button { background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        .result { margin-top: 20px; padding: 20px; background-color: #f0f0f0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Respiratory Disease Classification Using LSTM-GRU</h1>
+        
+        <form action="{{ url_for('predict') }}" method="post">
+            <h3>Enter Patient Data:</h3>
+            <input name="feature1" placeholder="Feature 1" type="number" step="any" required>
+            <input name="feature2" placeholder="Feature 2" type="number" step="any" required>
+            <input name="feature3" placeholder="Feature 3" type="number" step="any" required>
+            <input name="feature4" placeholder="Feature 4" type="number" step="any" required>
+            <input name="feature5" placeholder="Feature 5" type="number" step="any" required>
+            <br><br>
+            <button type="submit">Predict</button>
+        </form>
+        
+        {% if prediction_text %}
+        <div class="result">
+            <h3>Prediction Result:</h3>
+            <p><strong>{{ prediction_text }}</strong></p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -8,3 +8,5 @@ jupyter
 librosa
 scipy
 plotly
+Flask
+gunicorn
