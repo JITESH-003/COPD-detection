@@ -19,7 +19,6 @@ __pycache__/
 
 # Model files (can be large)
 *.h5
-*.pkl
 *.joblib
 *.model
 
